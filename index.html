@@ -11,7 +11,6 @@
     content="Prepare for job interviews with personalised AI-powered questions, video or audio practice, scoring, feedback and a full Interview Report."
   />
 
-  <!-- Apple Smart App Banner -->
   <meta
     name="apple-itunes-app"
     content="app-id=6805704413"
@@ -57,17 +56,11 @@
       color: #5139d8;
     }
 
-    .logo {
+    .logo-img {
       width: 48px;
       height: 48px;
       border-radius: 13px;
-      background: linear-gradient(145deg, #29a5ff, #315be8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 26px;
-      font-weight: 900;
+      object-fit: cover;
       box-shadow: 0 8px 24px rgba(54, 97, 230, 0.22);
     }
 
@@ -150,85 +143,107 @@
     }
 
     .download-area {
-      margin-top: 34px;
+      margin-top: 38px;
     }
 
-    .available {
-      font-size: 13px;
+    .platform-title {
+      margin-bottom: 11px;
+      font-size: 12px;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 1.2px;
       color: #6b7280;
       font-weight: 800;
-      margin-bottom: 10px;
     }
 
-    .store-button {
+    /* APP STORE */
+
+    .app-store-button {
       display: inline-flex;
       align-items: center;
       gap: 13px;
-      min-width: 250px;
-      padding: 14px 20px;
-      border-radius: 14px;
-      background: #111;
-      color: white;
+      min-width: 220px;
+      padding: 9px 17px;
+      background: #000;
+      color: #fff;
+      border: 1px solid #a6a6a6;
+      border-radius: 10px;
       text-decoration: none;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
       transition: transform 0.18s ease, box-shadow 0.18s ease;
     }
 
-    .store-button:hover {
+    .app-store-button:hover {
       transform: translateY(-2px);
-      box-shadow: 0 16px 34px rgba(0,0,0,0.2);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.18);
     }
 
-    .store-icon {
-      font-size: 30px;
+    .apple-logo {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 38px;
+      line-height: 1;
+      margin-top: -2px;
     }
 
-    .store-small {
+    .store-text-small {
       display: block;
       font-size: 11px;
-      opacity: 0.8;
-      line-height: 1.1;
+      line-height: 1.05;
+      letter-spacing: 0.1px;
     }
 
-    .store-large {
+    .store-text-large {
       display: block;
-      font-size: 19px;
-      font-weight: 700;
-      line-height: 1.2;
+      font-size: 21px;
+      line-height: 1.1;
+      font-weight: 500;
+      margin-top: 2px;
     }
+
+    /* ANDROID */
 
     .android-block {
-      margin-top: 18px;
-    }
-
-    .coming-soon {
-      display: inline-flex;
-      align-items: center;
-      gap: 13px;
-      min-width: 250px;
-      padding: 14px 20px;
-      border-radius: 14px;
-      background: #f1f3f5;
-      border: 1px solid #dde1e6;
-      color: #777;
-      cursor: default;
+      margin-top: 34px;
+      padding-top: 28px;
+      border-top: 1px solid #e8e9ee;
+      max-width: 270px;
     }
 
     .soon-label {
       display: inline-block;
-      margin-bottom: 8px;
-      background: #fff2cd;
-      color: #8a6500;
-      padding: 6px 10px;
+      margin-bottom: 10px;
+      background: #fff1c4;
+      color: #7a5900;
+      padding: 6px 11px;
       border-radius: 999px;
-      font-size: 12px;
+      font-size: 11px;
+      letter-spacing: 0.5px;
       font-weight: 800;
     }
 
+    .google-play-disabled {
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+      min-width: 220px;
+      padding: 10px 17px;
+      border-radius: 10px;
+      background: #f4f5f7;
+      border: 1px solid #d9dde3;
+      color: #8b8f98;
+      cursor: default;
+      opacity: 0.85;
+    }
+
+    .play-icon {
+      width: 0;
+      height: 0;
+      border-top: 14px solid transparent;
+      border-bottom: 14px solid transparent;
+      border-left: 22px solid #8c98a5;
+    }
+
     .trust {
-      margin-top: 28px;
+      margin-top: 27px;
       color: #7a808a;
       font-size: 13px;
     }
@@ -245,7 +260,6 @@
       height: 430px;
       border-radius: 50%;
       background: linear-gradient(135deg, #dff4ff, #eee7ff);
-      filter: blur(2px);
       z-index: 0;
       top: 50%;
       left: 50%;
@@ -270,18 +284,14 @@
       overflow: hidden;
     }
 
-    .screen-logo {
+    .screen-logo-img {
+      display: block;
       margin: 0 auto 18px;
       width: 58px;
       height: 58px;
       border-radius: 16px;
-      background: linear-gradient(145deg, #29a5ff, #315be8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: 900;
-      font-size: 29px;
+      object-fit: cover;
+      box-shadow: 0 6px 18px rgba(48, 94, 220, 0.17);
     }
 
     .screen h2 {
@@ -379,10 +389,6 @@
       margin-left: 18px;
     }
 
-    .footer a:hover {
-      text-decoration: underline;
-    }
-
     @media (max-width: 850px) {
       .hero {
         grid-template-columns: 1fr;
@@ -411,6 +417,10 @@
         flex-direction: column;
         align-items: center;
       }
+
+      .android-block {
+        width: 270px;
+      }
     }
 
     @media (max-width: 520px) {
@@ -422,7 +432,7 @@
         font-size: 19px;
       }
 
-      .logo {
+      .logo-img {
         width: 42px;
         height: 42px;
       }
@@ -468,8 +478,13 @@
   <div class="page">
 
     <header class="nav">
+
       <div class="brand">
-        <div class="logo">A</div>
+        <img
+          class="logo-img"
+          src="icon.png"
+          alt="InterviewReady app icon"
+        />
         <div>Interview<span>Ready</span></div>
       </div>
 
@@ -479,13 +494,16 @@
       >
         Download app
       </a>
+
     </header>
 
     <main class="hero">
 
       <section class="hero-copy">
 
-        <div class="eyebrow">AI-powered interview practice</div>
+        <div class="eyebrow">
+          AI-powered interview practice
+        </div>
 
         <h1>
           Interview coming up?
@@ -524,31 +542,46 @@
 
         <div class="download-area">
 
-          <div class="available">Available now on iPhone</div>
+          <div class="platform-title">
+            Available now on iPhone
+          </div>
 
           <a
-            class="store-button"
+            class="app-store-button"
             href="https://apps.apple.com/au/app/interviewready/id6805704413"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <div class="store-icon">●</div>
+            <div class="apple-logo"></div>
 
             <div>
-              <span class="store-small">Download on the</span>
-              <span class="store-large">App Store</span>
+              <span class="store-text-small">
+                Download on the
+              </span>
+              <span class="store-text-large">
+                App Store
+              </span>
             </div>
           </a>
 
+
           <div class="android-block">
 
-            <div class="soon-label">ANDROID COMING SOON</div>
+            <div class="soon-label">
+              ANDROID COMING SOON
+            </div>
 
-            <div class="coming-soon">
+            <div class="google-play-disabled">
 
-              <div class="store-icon">▶</div>
+              <div class="play-icon"></div>
 
               <div>
-                <span class="store-small">Coming soon on</span>
-                <span class="store-large">Google Play</span>
+                <span class="store-text-small">
+                  Coming soon on
+                </span>
+                <span class="store-text-large">
+                  Google Play
+                </span>
               </div>
 
             </div>
@@ -563,6 +596,7 @@
 
       </section>
 
+
       <section class="phone-wrap">
 
         <div class="glow"></div>
@@ -571,9 +605,16 @@
 
           <div class="screen">
 
-            <div class="screen-logo">A</div>
+            <img
+              class="screen-logo-img"
+              src="icon.png"
+              alt="InterviewReady"
+            />
 
-            <h2>Let's get you<br />interview ready</h2>
+            <h2>
+              Let's get you<br />
+              interview ready
+            </h2>
 
             <div class="screen-tagline">
               Practise. Get feedback. Walk in ready.
@@ -615,9 +656,12 @@
 
     </main>
 
+
     <section class="section">
 
-      <h2>Your interview. Before the interview.</h2>
+      <h2>
+        Your interview. Before the interview.
+      </h2>
 
       <p>
         Prepare in your own time, practise realistically and learn what to
@@ -625,6 +669,7 @@
       </p>
 
     </section>
+
 
     <footer class="footer">
 
