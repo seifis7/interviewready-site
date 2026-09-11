@@ -2,28 +2,18 @@
   <title id="title">InterviewRise logo</title>
   <desc id="desc">A profile inside a conversation frame with a rising arrow forming an R.</desc>
   <defs>
-    <linearGradient id="frame" x1="160" y1="820" x2="820" y2="190" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#1739D7"/>
-      <stop offset="0.48" stop-color="#0878F4"/>
-      <stop offset="1" stop-color="#18D6D0"/>
+    <linearGradient id="brand" x1="0" y1="0.85" x2="1" y2="0.1">
+      <stop offset="0" stop-color="#123EEB"/><stop offset="0.50" stop-color="#139BEF"/><stop offset="1" stop-color="#18D49C"/>
     </linearGradient>
-    <linearGradient id="arrow" x1="350" y1="760" x2="860" y2="350" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#145DE6"/>
-      <stop offset="0.55" stop-color="#06A8D8"/>
-      <stop offset="1" stop-color="#35D18A"/>
-    </linearGradient>
-    <linearGradient id="person" x1="340" y1="330" x2="520" y2="650" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#0797F0"/>
-      <stop offset="1" stop-color="#1739D7"/>
+    <linearGradient id="arrow" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#1738E6"/><stop offset="0.52" stop-color="#129EE9"/><stop offset="1" stop-color="#16D69C"/>
     </linearGradient>
   </defs>
-  <rect width="1024" height="1024" rx="210" fill="#fff"/>
-  <path d="M244 235c-52 0-94 42-94 94v328c0 52 42 94 94 94h36v112l133-112h330c52 0 94-42 94-94V329c0-52-42-94-94-94H244zm0 74h499c11 0 20 9 20 20v328c0 11-9 20-20 20H386l-32 27v-27H244c-11 0-20-9-20-20V329c0-11 9-20 20-20z" fill="url(#frame)"/>
-  <circle cx="390" cy="433" r="69" fill="url(#person)"/>
-  <path d="M287 641c14-91 71-141 104-141 55 0 108 53 119 142l-223-1z" fill="url(#person)"/>
-  <rect x="528" y="376" width="160" height="30" rx="15" fill="#ABC9F2"/>
-  <rect x="528" y="432" width="131" height="30" rx="15" fill="#9FC2F0"/>
-  <rect x="528" y="488" width="91" height="30" rx="15" fill="#91B8ED"/>
-  <path d="M318 778c96-121 210-147 313-204 64-35 117-81 160-137l-46-20 129-78 18 150-44-31c-52 75-116 135-195 179-92 52-186 78-269 174L318 778z" fill="url(#arrow)"/>
-  <path d="M624 698h82l128 156H732L624 698z" fill="url(#frame)"/>
+  <rect width="1024" height="1024" fill="#FFFFFF"/>
+  <path d="M292 278 C292 220 338 176 398 176 H650 C718 176 770 226 770 294 V418 C770 473 743 516 697 546 L540 647 H410 L303 749 L319 630 C302 611 292 584 292 552 Z" fill="none" stroke="url(#brand)" stroke-width="78" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="426" cy="397" r="66" fill="#176CEB"/>
+  <path d="M329 565 C340 488 386 452 426 452 C475 452 526 492 535 564 C475 587 389 590 329 565Z" fill="#174FE6"/>
+  <rect x="540" y="345" width="122" height="30" rx="15" fill="#B9D4F2"/><rect x="540" y="396" width="101" height="30" rx="15" fill="#AFCDF0"/><rect x="540" y="447" width="72" height="30" rx="15" fill="#A6C8EE"/>
+  <path d="M581 659 L672 775 L770 775 L674 642 Z" fill="url(#brand)"/>
+  <path d="M330 744 C418 655 502 620 575 587 C648 554 701 507 736 455 L689 438 C676 433 677 415 690 409 L790 358 C805 350 822 359 825 376 L844 486 C847 502 829 512 817 501 L779 467 C731 543 663 605 582 643 C495 684 420 710 330 744Z" fill="url(#arrow)" stroke="#FFFFFF" stroke-width="16" stroke-linejoin="round"/>
 </svg>
