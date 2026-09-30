@@ -5,99 +5,323 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/svg+xml" href="logo.svg" />
   <title>InterviewRise | Smarter Interview Practice</title>
-  <meta name="description" content="Practise realistic interview questions tailored to your CV and target role, retry weak answers, track progress and get detailed AI-assisted feedback." />
+  <meta name="description" content="Practise realistic interview questions tailored to your CV and target role, retry weak answers, track progress and get detailed feedback." />
   <meta name="apple-itunes-app" content="app-id=6805704413" />
   <style>
-    * { box-sizing: border-box; }
-    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; color:#0D245B; background:radial-gradient(circle at top left,#edf8ff 0,transparent 36%),radial-gradient(circle at top right,#ebfffb 0,transparent 34%),#fff; }
-    .page { min-height:100vh; }
-    .nav { max-width:1140px; margin:0 auto; padding:24px 28px; display:flex; align-items:center; justify-content:space-between; }
-    .brand { display:flex; align-items:center; gap:12px; font-size:24px; font-weight:850; color:#08245d; }
-    .brand span { color:#08AFC2; }
-    .logo { width:54px; height:54px; border-radius:14px; object-fit:cover; box-shadow:0 8px 24px rgba(24,125,210,.18); }
-    .nav a { color:#40506c; text-decoration:none; font-size:14px; font-weight:700; }
-    .hero { max-width:1140px; margin:0 auto; padding:62px 28px 62px; display:grid; grid-template-columns:1.08fr .92fr; gap:64px; align-items:center; }
-    .eyebrow { display:inline-block; background:#EAF7FF; color:#1267E8; padding:9px 14px; border-radius:999px; font-size:13px; font-weight:850; letter-spacing:.8px; margin-bottom:20px; }
-    h1 { margin:0; max-width:720px; font-size:clamp(48px,6vw,76px); line-height:.98; letter-spacing:-3px; color:#09245B; }
-    h1 span { background:linear-gradient(90deg,#1267F2,#0DC9C0); -webkit-background-clip:text; background-clip:text; color:transparent; }
-    .subtitle { margin:25px 0 0; max-width:650px; font-size:21px; line-height:1.55; color:#53627c; }
-    .features { margin:30px 0 18px; display:grid; grid-template-columns:1fr 1fr; gap:14px; }
-    .feature { display:flex; gap:11px; align-items:flex-start; padding:15px; border:1px solid #E6EEF7; border-radius:16px; background:rgba(255,255,255,.82); font-size:14px; line-height:1.4; font-weight:700; box-shadow:0 7px 20px rgba(24,80,150,.05); }
-    .tick { width:26px; height:26px; flex:0 0 26px; border-radius:50%; background:#E7FAF6; color:#089B82; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:900; }
-    .offer { margin:20px 0 26px; padding:17px 20px; border:1px solid #D9E7FF; border-radius:17px; background:linear-gradient(90deg,#F3F7FF,#F1FFFC); color:#53627c; }
-    .offer strong { display:block; color:#1267E8; font-size:13px; letter-spacing:.8px; margin-bottom:4px; }
-    .offer b { font-size:20px; color:#0D245B; }
-    .store { margin-top:26px; }
-    .store img { width:190px; height:auto; display:block; }
-    .trust { margin-top:16px; color:#748197; font-size:13px; line-height:1.55; max-width:610px; }
-    .phone-wrap { display:flex; justify-content:center; }
-    .phone { width:min(350px,85vw); background:#111827; padding:12px; border-radius:48px; box-shadow:0 32px 70px rgba(34,64,115,.23); transform:rotate(2deg); }
-    .screen { background:#fff; min-height:620px; border-radius:38px; padding:34px 24px 25px; text-align:center; }
-    .screen img { width:76px; height:76px; border-radius:20px; object-fit:cover; box-shadow:0 7px 20px rgba(48,94,220,.15); }
-    .screen h2 { margin:14px 0 4px; font-size:29px; }
-    .screen p { margin:0; color:#737f92; line-height:1.45; }
-    .cards { margin-top:25px; display:flex; flex-direction:column; gap:11px; text-align:left; }
-    .card { border:1px solid #e7edf5; border-radius:15px; padding:15px; box-shadow:0 4px 14px rgba(33,55,92,.05); }
-    .card strong { display:block; font-size:14px; margin-bottom:4px; color:#102A65; }
-    .card span { color:#737f92; font-size:12px; }
-    .progress { margin-top:17px; padding:14px; border-radius:14px; background:#F0FBFA; color:#087f73; font-weight:800; font-size:13px; }
-    .button { margin-top:19px; padding:16px; border-radius:14px; background:linear-gradient(90deg,#1267F2,#0CCBB3); color:#fff; font-weight:850; }
-    .section { max-width:950px; margin:0 auto; padding:60px 28px 72px; text-align:center; }
-    .section h2 { font-size:38px; margin:0 0 14px; color:#0D245B; }
-    .section p { color:#65748d; line-height:1.65; font-size:17px; }
-    footer { border-top:1px solid #e9eef5; }
-    .footer { max-width:1000px; margin:0 auto; padding:28px; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; color:#7a8697; font-size:13px; }
-    .footer a { color:#63708a; text-decoration:none; margin-left:18px; }
-    @media(max-width:850px){ .hero{grid-template-columns:1fr;padding-top:38px;gap:54px}.hero-copy{text-align:center}.subtitle,.trust{margin-left:auto;margin-right:auto}.features{max-width:650px;margin-left:auto;margin-right:auto;text-align:left}.store{display:flex;justify-content:center}.phone{transform:none} }
-    @media(max-width:520px){ .nav{padding:18px 20px}.brand{font-size:20px}.logo{width:44px;height:44px}.nav a{display:none}.hero{padding:34px 20px}h1{font-size:47px;letter-spacing:-2px}.subtitle{font-size:18px}.features{grid-template-columns:1fr}.footer{justify-content:center;text-align:center}.footer a{margin:0 8px} }
+    * { box-sizing:border-box; }
+    :root {
+      --navy:#0c245d;
+      --blue:#2c67f5;
+      --cyan:#2dc9c5;
+      --ink:#10234d;
+      --muted:#68758f;
+      --line:#dfe9f5;
+      --soft:#f7fbff;
+    }
+    html { scroll-behavior:smooth; }
+    body {
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 78% 12%, rgba(197,243,242,.36), transparent 28%),
+        radial-gradient(circle at 7% 1%, rgba(210,233,255,.42), transparent 30%),
+        #fff;
+    }
+    a { color:inherit; }
+    .page { min-height:100vh; overflow:hidden; }
+    .nav {
+      max-width:1280px;
+      margin:0 auto;
+      padding:22px 34px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      position:relative;
+      z-index:5;
+    }
+    .brand { display:flex; align-items:center; gap:12px; font-size:24px; font-weight:850; color:#0a245c; letter-spacing:-.4px; }
+    .brand span { color:#0db4c2; }
+    .logo { width:52px; height:52px; border-radius:14px; object-fit:cover; box-shadow:0 10px 28px rgba(31,114,214,.16); }
+    .download-top {
+      text-decoration:none;
+      color:#fff;
+      font-size:14px;
+      font-weight:800;
+      padding:13px 21px;
+      border-radius:999px;
+      background:linear-gradient(90deg,#3569f3,#39c8c2);
+      box-shadow:0 10px 26px rgba(45,105,240,.16);
+    }
+    .hero {
+      max-width:1280px;
+      margin:0 auto;
+      padding:52px 34px 76px;
+      display:grid;
+      grid-template-columns:minmax(0,1.05fr) minmax(420px,.95fr);
+      gap:70px;
+      align-items:center;
+      position:relative;
+    }
+    .hero-copy { position:relative; z-index:2; }
+    .eyebrow {
+      display:inline-block;
+      padding:9px 15px;
+      border-radius:999px;
+      background:#edf7ff;
+      color:#2469e9;
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:1.2px;
+      margin-bottom:20px;
+    }
+    h1 {
+      margin:0;
+      max-width:670px;
+      font-size:clamp(54px,6vw,84px);
+      line-height:.96;
+      letter-spacing:-4px;
+      color:var(--navy);
+    }
+    h1 span {
+      background:linear-gradient(90deg,#2a69f5,#29c8c1);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .subtitle {
+      margin:24px 0 0;
+      max-width:650px;
+      font-size:20px;
+      line-height:1.58;
+      color:#53627e;
+    }
+    .features {
+      margin-top:30px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      max-width:700px;
+    }
+    .feature {
+      min-height:106px;
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      padding:19px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:rgba(255,255,255,.9);
+      box-shadow:0 12px 30px rgba(32,82,145,.06);
+    }
+    .feature-icon {
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex:0 0 42px;
+      background:#edf4ff;
+      color:#316cf4;
+      font-size:20px;
+      font-weight:900;
+    }
+    .feature:nth-child(3) .feature-icon { background:#eafbf8; color:#16a594; }
+    .feature:nth-child(4) .feature-icon { background:#eef4ff; color:#336af1; }
+    .feature strong { display:block; margin:1px 0 5px; font-size:16px; color:#11295f; }
+    .feature span { display:block; color:#67758e; font-size:14px; line-height:1.42; }
+    .offer {
+      margin-top:18px;
+      max-width:700px;
+      padding:18px 20px;
+      border:1px solid #bcebe8;
+      border-radius:18px;
+      background:linear-gradient(100deg,#eef5ff,#effffb);
+    }
+    .offer-label { color:#2c66ef; font-size:12px; font-weight:900; letter-spacing:1px; margin-bottom:4px; }
+    .offer b { display:block; color:#0d275f; font-size:20px; line-height:1.3; }
+    .offer span { display:block; margin-top:4px; color:#65738b; font-size:13px; }
+    .store { margin-top:22px; }
+    .store img { display:block; width:205px; height:auto; }
+    .trust { margin-top:13px; max-width:670px; color:#7b8798; font-size:12px; line-height:1.5; }
+
+    .visual { position:relative; min-height:690px; display:flex; align-items:center; justify-content:center; }
+    .blob {
+      position:absolute;
+      border-radius:50%;
+      filter:blur(.2px);
+      pointer-events:none;
+    }
+    .blob.one { width:520px; height:520px; right:-40px; top:75px; background:rgba(209,237,255,.62); }
+    .blob.two { width:480px; height:480px; right:-120px; top:190px; background:rgba(216,251,247,.72); }
+    .blob.three { width:420px; height:420px; right:80px; bottom:-30px; background:rgba(235,245,255,.72); }
+    .phone {
+      width:min(365px,85vw);
+      background:#111827;
+      padding:11px;
+      border-radius:52px;
+      box-shadow:0 36px 80px rgba(24,57,104,.24);
+      position:relative;
+      z-index:2;
+    }
+    .screen {
+      min-height:655px;
+      border-radius:42px;
+      background:#fff;
+      padding:24px 20px 22px;
+      overflow:hidden;
+    }
+    .notch { width:120px; height:30px; margin:-8px auto 10px; background:#050607; border-radius:999px; }
+    .screen-brand { display:flex; align-items:center; gap:9px; text-align:left; margin-bottom:17px; }
+    .screen-brand img { width:38px; height:38px; border-radius:11px; box-shadow:0 5px 14px rgba(39,103,214,.12); }
+    .screen-brand strong { font-size:18px; color:#132b63; }
+    .screen h2 { margin:0; font-size:26px; color:#12275a; text-align:left; }
+    .screen-sub { margin:4px 0 19px; color:#6e7a91; font-size:13px; text-align:left; }
+    .app-card {
+      display:grid;
+      grid-template-columns:44px 1fr 28px;
+      gap:12px;
+      align-items:center;
+      padding:14px;
+      margin-bottom:11px;
+      border:1px solid #e4ebf3;
+      border-radius:15px;
+      text-align:left;
+      box-shadow:0 5px 16px rgba(34,61,104,.045);
+      background:#fff;
+    }
+    .app-card.primary { color:#fff; border:none; background:linear-gradient(100deg,#3469f4,#3ec8bd); }
+    .app-icon { width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:#edf4ff; color:#2e68ef; font-size:19px; font-weight:800; }
+    .app-card.primary .app-icon { background:rgba(255,255,255,.15); color:#fff; }
+    .app-copy strong { display:block; font-size:14px; margin-bottom:3px; color:#122b62; }
+    .app-copy span { display:block; color:#738097; font-size:11px; line-height:1.35; }
+    .app-card.primary .app-copy strong,.app-card.primary .app-copy span { color:#fff; }
+    .arrow { color:#71809a; font-size:20px; text-align:center; }
+    .app-card.primary .arrow { color:#fff; }
+    .progress {
+      margin-top:13px;
+      padding:14px 15px;
+      border-radius:14px;
+      background:#eefbf8;
+      color:#168c7f;
+      font-size:12px;
+      font-weight:800;
+      text-align:center;
+    }
+    .button {
+      margin-top:15px;
+      padding:15px;
+      border-radius:14px;
+      text-align:center;
+      background:linear-gradient(90deg,#3268f4,#37c8bc);
+      color:#fff;
+      font-weight:850;
+      font-size:15px;
+    }
+    .section { max-width:980px; margin:0 auto; padding:48px 28px 72px; text-align:center; }
+    .section h2 { margin:0 0 13px; font-size:40px; color:var(--navy); letter-spacing:-1.5px; }
+    .section p { margin:0 auto; max-width:800px; color:#66758f; font-size:17px; line-height:1.65; }
+    footer { border-top:1px solid #e7eef6; background:rgba(255,255,255,.8); }
+    .footer { max-width:1100px; margin:0 auto; padding:28px; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; color:#7b8798; font-size:13px; }
+    .footer a { color:#61708b; text-decoration:none; margin-left:18px; }
+
+    @media(max-width:960px){
+      .hero { grid-template-columns:1fr; gap:30px; padding-top:36px; }
+      .hero-copy { text-align:center; }
+      .subtitle,.offer,.trust,.features { margin-left:auto; margin-right:auto; }
+      .store { display:flex; justify-content:center; }
+      .visual { min-height:680px; }
+    }
+    @media(max-width:620px){
+      .nav { padding:18px 20px; }
+      .brand { font-size:20px; }
+      .logo { width:44px; height:44px; }
+      .download-top { padding:11px 15px; font-size:12px; }
+      .hero { padding:30px 20px 50px; }
+      h1 { font-size:50px; letter-spacing:-2.5px; }
+      .subtitle { font-size:18px; }
+      .features { grid-template-columns:1fr; }
+      .feature { min-height:auto; }
+      .offer b { font-size:17px; }
+      .visual { min-height:610px; }
+      .phone { width:min(335px,88vw); }
+      .screen { min-height:600px; }
+      .section h2 { font-size:32px; }
+      .footer { justify-content:center; text-align:center; }
+      .footer a { margin:0 8px; }
+    }
   </style>
 </head>
 <body>
 <div class="page">
   <header class="nav">
     <div class="brand"><img class="logo" src="logo.svg" alt="InterviewRise logo" /><div>Interview<span>Rise</span></div></div>
-    <a href="https://apps.apple.com/app/id6805704413">Download app</a>
+    <a class="download-top" href="https://apps.apple.com/app/id6805704413" target="_blank" rel="noopener noreferrer"> Download App</a>
   </header>
 
   <main class="hero">
     <section class="hero-copy">
       <div class="eyebrow">INTERVIEWRISE JUST GOT BETTER</div>
       <h1>Your next interview <span>starts here.</span></h1>
-      <p class="subtitle">Practise realistic questions tailored to your CV and target role, improve weak answers, and see your progress before the real interview.</p>
+      <p class="subtitle">Practise realistic interview questions tailored to your CV and target role, improve weak answers, and track your progress before the real interview.</p>
 
       <div class="features">
-        <div class="feature"><div class="tick">✓</div><div><strong>Quick Mock</strong><br/>7 tailored questions · full report</div></div>
-        <div class="feature"><div class="tick">✓</div><div><strong>Full Interview · Pro</strong><br/>14 tailored questions · deeper practice</div></div>
-        <div class="feature"><div class="tick">✓</div><div><strong>Retry + improve</strong><br/>Compare your first score with your retry</div></div>
-        <div class="feature"><div class="tick">✓</div><div><strong>Progress insights</strong><br/>Track completed interview scores over time</div></div>
+        <div class="feature"><div class="feature-icon">▤</div><div><strong>Quick Mock</strong><span>7 tailored questions for focused practice.</span></div></div>
+        <div class="feature"><div class="feature-icon">👥</div><div><strong>Full Interview</strong><span>14 tailored questions for a deeper practice session.</span></div></div>
+        <div class="feature"><div class="feature-icon">↻</div><div><strong>Retry weak answers</strong><span>Compare your first score with your retry.</span></div></div>
+        <div class="feature"><div class="feature-icon">▥</div><div><strong>Track your progress</strong><span>Revisit completed interviews and saved reports.</span></div></div>
       </div>
 
-      <div class="offer"><strong>INTERVIEWRISE PRO</strong><b>US$3.99/week · A$5.99/week in Australia</b><br/>Local App Store pricing applies. Cancel anytime.</div>
+      <div class="offer">
+        <div class="offer-label">INTERVIEWRISE PRO</div>
+        <b>US$3.99/week · A$5.99/week in Australia</b>
+        <span>Local App Store pricing applies. Cancel anytime.</span>
+      </div>
 
       <div class="store"><a href="https://apps.apple.com/app/id6805704413" target="_blank" rel="noopener noreferrer"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us" alt="Download on the App Store" /></a></div>
-      <p class="trust">InterviewRise uses AI to help create interview questions, transcribe practice answers and provide feedback. It is a practice and preparation tool and does not guarantee employment outcomes.</p>
+      <p class="trust">InterviewRise helps create interview questions, transcribe practice answers and provide feedback. It is a practice and preparation tool and does not guarantee employment outcomes.</p>
     </section>
 
-    <div class="phone-wrap">
-      <div class="phone"><div class="screen">
-        <img src="logo.svg" alt="InterviewRise icon" />
-        <h2>InterviewRise</h2>
-        <p>Practice smarter. Improve faster.</p>
-        <div class="cards">
-          <div class="card"><strong>Quick Mock</strong><span>7 tailored questions for focused practice.</span></div>
-          <div class="card"><strong>Full Interview</strong><span>14 tailored questions for a deeper Pro session.</span></div>
-          <div class="card"><strong>Retry weak answers</strong><span>See whether your next attempt actually improves.</span></div>
-          <div class="card"><strong>Know what to work on</strong><span>Get detailed feedback and a final interview report.</span></div>
+    <div class="visual">
+      <div class="blob one"></div><div class="blob two"></div><div class="blob three"></div>
+      <div class="phone">
+        <div class="screen">
+          <div class="notch"></div>
+          <div class="screen-brand"><img src="logo.svg" alt="InterviewRise icon" /><strong>InterviewRise</strong></div>
+          <h2>Ready to practise?</h2>
+          <p class="screen-sub">Choose the interview format that suits you.</p>
+
+          <div class="app-card primary">
+            <div class="app-icon">▤</div>
+            <div class="app-copy"><strong>Quick Mock</strong><span>7 tailored questions for focused practice.</span></div>
+            <div class="arrow">›</div>
+          </div>
+          <div class="app-card">
+            <div class="app-icon">👥</div>
+            <div class="app-copy"><strong>Full Interview</strong><span>14 tailored questions for deeper practice.</span></div>
+            <div class="arrow">›</div>
+          </div>
+          <div class="app-card">
+            <div class="app-icon">↻</div>
+            <div class="app-copy"><strong>Retry weak answers</strong><span>See whether your next attempt improves.</span></div>
+            <div class="arrow">›</div>
+          </div>
+          <div class="app-card">
+            <div class="app-icon">▥</div>
+            <div class="app-copy"><strong>Saved Reports</strong><span>Revisit completed interview reports anytime.</span></div>
+            <div class="arrow">›</div>
+          </div>
+          <div class="progress">↗ Keep improving across saved interviews</div>
+          <div class="button">Start practising</div>
         </div>
-        <div class="progress">↗ Track your progress across saved interviews</div>
-        <div class="button">Start practising</div>
-      </div></div>
+      </div>
     </div>
   </main>
 
   <section class="section">
-    <h2>Same goal. A much stronger InterviewRise.</h2>
-    <p>More realistic practice, more useful feedback and a clearer improvement loop — so every mock interview gives you something specific to work on next.</p>
+    <h2>Practise the role you actually want.</h2>
+    <p>Add your CV and the job description, then work through questions tailored to that opportunity. Review your transcript, get detailed feedback, retry weaker answers and finish with a personalised interview report.</p>
   </section>
 
   <footer><div class="footer"><span>© 2026 InterviewRise</span><span><a href="https://privacy.interviewreadyai.app">Privacy</a><a href="https://terms.interviewreadyai.app">Terms</a><a href="https://support.interviewreadyai.app">Support</a></span></div></footer>
