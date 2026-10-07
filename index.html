@@ -142,8 +142,11 @@
     .offer-label { color:#2c66ef; font-size:12px; font-weight:900; letter-spacing:1px; margin-bottom:4px; }
     .offer b { display:block; color:#0d275f; font-size:20px; line-height:1.3; }
     .offer span { display:block; margin-top:4px; color:#65738b; font-size:13px; }
-    .store { margin-top:22px; }
-    .store img { display:block; width:205px; height:auto; }
+    .store { margin-top:22px; display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+    .store a { display:inline-flex; align-items:center; }
+    .store img { display:block; width:auto; object-fit:contain; }
+    .store .app-store-badge { height:60px; }
+    .store .google-play-badge { height:80px; margin:-10px -8px; }
     .trust { margin-top:13px; max-width:670px; color:#7b8798; font-size:12px; line-height:1.5; }
 
     .visual { position:relative; min-height:690px; display:flex; align-items:center; justify-content:center; }
@@ -257,7 +260,7 @@
 <div class="page">
   <header class="nav">
     <div class="brand"><img class="logo" src="icon.png" alt="InterviewRise logo" /><div>Interview<span>Rise</span></div></div>
-    <a class="download-top" href="https://apps.apple.com/app/id6805704413" target="_blank" rel="noopener noreferrer"> Download App</a>
+    <a class="download-top" href="#download">Download App</a>
   </header>
 
   <main class="hero">
@@ -279,7 +282,10 @@
         <span>Local App Store pricing applies. Cancel anytime.</span>
       </div>
 
-      <div class="store"><a href="https://apps.apple.com/app/id6805704413" target="_blank" rel="noopener noreferrer"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us" alt="Download on the App Store" /></a></div>
+      <div class="store" id="download">
+        <a href="https://apps.apple.com/app/id6805704413" target="_blank" rel="noopener noreferrer"><img class="app-store-badge" src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us" alt="Download on the App Store" /></a>
+        <a href="https://play.google.com/store/apps/details?id=com.interviewready.app" target="_blank" rel="noopener noreferrer"><img class="google-play-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" /></a>
+      </div>
       <p class="trust">InterviewRise helps create interview questions, transcribe practice answers and provide feedback. It is a practice and preparation tool and does not guarantee employment outcomes.</p>
     </section>
 
